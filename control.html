@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroVision - Control Panel</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <!-- Navbar -->
+  <header class="w-full border-b bg-white">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-green-600"></div>
+        <div>
+          <h1 class="font-bold text-lg">AgroVision</h1>
+          <p class="text-xs text-slate-500">Drone Soil Monitoring</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <span class="hidden md:inline text-slate-500">Kelompok 06 - Pemrograman Dasar</span>
+        <div class="w-8 h-8 rounded-full bg-slate-200"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Layout dengan sidebar -->
+  <div class="max-w-7xl mx-auto flex">
+    <!-- Sidebar -->
+    <aside class="hidden md:flex flex-col w-56 border-r bg-white min-h-[calc(100vh-56px)] px-4 py-6 text-sm">
+      <nav class="space-y-1">
+        <a href="index.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100">
+          <span>📊</span> <span>Dashboard</span>
+        </a>
+        <a href="control.html" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-green-50 text-green-700 font-medium">
+          <span>🎮</span> <span>Control Panel</span>
+        </a>
+        <a href="live.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100">
+          <span>📹</span> <span>Live Camera</span>
+        </a>
+        <a href="settings.html" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-slate-100">
+          <span>⚙️</span> <span>Settings</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Konten utama -->
+    <main class="flex-1 px-4 py-6 space-y-6">
+      <h2 class="text-xl font-semibold">Control Panel</h2>
+      <p class="text-sm text-slate-600">
+        Simulasi tombol untuk mengontrol propeller drone (tanpa koneksi ke hardware).
+      </p>
+
+      <section class="space-y-6">
+        <div class="grid md:grid-cols-3 gap-4">
+          <button data-prop="A"
+                  class="prop-btn bg-white border rounded-xl p-4 text-left shadow-sm hover:border-green-500 text-sm">
+            <p class="font-semibold">Propeller A</p>
+            <p class="text-xs text-slate-500">Status: <span class="status-text">OFF</span></p>
+          </button>
+
+          <button data-prop="B"
+                  class="prop-btn bg-white border rounded-xl p-4 text-left shadow-sm hover:border-green-500 text-sm">
+            <p class="font-semibold">Propeller B</p>
+            <p class="text-xs text-slate-500">Status: <span class="status-text">OFF</span></p>
+          </button>
+
+          <button data-prop="C"
+                  class="prop-btn bg-white border rounded-xl p-4 text-left shadow-sm hover:border-green-500 text-sm">
+            <p class="font-semibold">Propeller C</p>
+            <p class="text-xs text-slate-500">Status: <span class="status-text">OFF</span></p>
+          </button>
+
+          <button data-prop="D"
+                  class="prop-btn bg-white border rounded-xl p-4 text-left shadow-sm hover:border-green-500 text-sm">
+            <p class="font-semibold">Propeller D</p>
+            <p class="text-xs text-slate-500">Status: <span class="status-text">OFF</span></p>
+          </button>
+
+          <button id="all-propellers"
+                  class="bg-green-600 text-white rounded-xl p-4 text-left shadow-sm text-sm md:col-span-2">
+            <p class="font-semibold">All Propeller</p>
+            <p class="text-xs text-green-100">Klik untuk ON/OFF semua propeller.</p>
+          </button>
+        </div>
+
+        <div class="bg-white border rounded-2xl p-4 text-xs text-slate-600 shadow-sm">
+          <p class="font-semibold mb-1">Log Aksi</p>
+          <ul id="log-list" class="space-y-1 max-h-40 overflow-y-auto">
+            <!-- log aksi via JS -->
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Script khusus halaman ini -->
+  <script src="js/control.js"></script>
+</body>
+</html>
